@@ -1,0 +1,312 @@
+/* Подключение normalize css */
+@import url("normalize.min.css");
+
+/* Подключение шрифтов Google */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
+/* Body, общее */ 
+html, body {
+    font-family: "Roboto", sans-serif; /*Указание шрифта для всего body */
+    margin: 0px auto; /*Расстояние от края элемента до края окна браузера*/
+    height: 100%;
+}
+
+h1, h2, h3 {
+    margin: 0px; /*Убрать отступы у загаловков*/
+}
+
+/* Подложка всей страницы */
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    /*box-sizing: border-box; /*Свойства width и height включают в себя значения padding и border, но не margin.*/
+}  
+
+/* Контейнер, в который помещается контент, согласно условию задания */
+.main_container {
+    max-width: 1219px; /*Устанавливает максимальную ширину элемента*/
+    padding: 0px 55px;
+    margin: 0px auto;
+}
+
+/*Указание внутреннего отступа для малой ширины экранов (если меньше 970)*/
+@media (max-width: 970px) {
+	.main_container {
+		padding: 0 20px 0 20px;
+	}
+}
+
+/* Убираем "накладывание шапки на контент при переходе по ссылке через прозрачную рамку */
+#the_problem,
+#PiedPiperCoin,
+#the_team {
+    border-top: 84px solid transparent; /* Делаем прозрачную рамку (transparent - прозрачный) в 84px (высота шапки) */
+    margin-top: -84px; /* Убираем верхний отступ */
+    background-clip: padding-box; /* Фон отображается внутри границ */
+}
+
+/* Header */
+/* Шапка сайта */
+.header {
+    position: fixed;
+    z-index: 100; /*Для наложения элемента поверх остальныъ элементов (для некоторых значений position*/
+    background-color: #007765;
+    width: 100%;
+    min-height: 84px; /* Минимальная высота */
+    top: 0px;
+    left: 0px;
+}
+
+.navigation_container {
+    min-height: 84px; /*Минимальная высота (на случай сужения браузера, чтобы элементы оставилсь на "подложке")*/
+    display: flex; /*Определяет как элемент должен быть показан в документе*/
+    flex-wrap: wrap; /*Перенос элементов внутри контейнера на следующую строку при уменьшении ширины экрана*/
+    align-items: center; /*Выравнивает флекс-элементы внутри контейнера в перпендикулярном направлении*/
+    justify-content: space-between; /*Расположение элементов внутри контейнера (крайние по бокам, остальные в центре) */ 
+}
+
+.logo {
+    float: left;
+    width: 185px;
+    height: 45px;
+}
+
+.link {
+    text-decoration: none; /*Убирает подчеркивание с ссылок*/
+    color: white;
+    font-size: 24px;
+    line-height: 28px; /*Высота строки*/
+    font-weight: 500; /*Насыщенность шрифта*/
+}
+
+@media (max-width: 670px) {
+	.logo {
+        width: 123px;
+        height: 30px;
+	}
+    .link {
+        font-size: 20px;
+        line-height: 24px; /*Высота строки*/
+    }
+    /*.header {
+        max-height: 64px;
+    }*/
+}
+
+@media (max-width: 300px) {
+	.logo {
+        width: 61.7px;
+        height: 15px;
+	}
+    .link {
+        font-size: 14px;
+        line-height: 16px; /*Высота строки*/
+    }
+    /*.header {
+        max-height: 64px;
+    }*/
+}
+
+/* Main */
+/* PiperNet Is Here */
+
+.jumborton_background {
+    margin-top: 84px;
+    background-image: url(../img/jumbotron.png); /*Ссылка на картинку*/
+    background-position: center top; /*Позиция картинки по горизонтали & вертикали*/
+    background-repeat: no-repeat; /*Повторение картинки при прокрутке (нет)*/
+    background-size: cover; /*Замещение картинки, занимает все пространсво*/
+    min-height: 403px;
+    display: flex; 
+    justify-content: center; /*Центрирование по горизонтали*/
+    align-items: center;     /*Центрирование по вертикали */
+}
+
+.title_pipernet {
+    color: white;
+    font-size: 72px;
+    line-height: 84px;
+    font-weight: 500;
+    margin: 0px auto;
+}
+
+/* The Problem */
+
+.problem_background {
+    background-color: #EEEEEE;
+    min-height: 719px;
+}
+
+.title {
+    color: #007765;
+    font-size: 64px;
+    line-height: 75px;
+    font-weight: 500;
+    font-style: normal;
+    margin: 0px auto;
+    padding-top: 48px;
+    text-align: center;
+}
+
+.problem_container {
+    color:black;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 400;
+    margin: 0px auto;
+    padding-top: 16px;
+    padding-bottom: 60px;
+}
+
+/* Hero */
+
+.hero_background {
+    background-image: url(../img/hero.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 483px;
+    display: flex; 
+    justify-content: center;
+    align-items: center;     
+}
+
+.hero_text {
+    color: #FFFFFF;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+    padding-top: 128px;
+    padding-bottom: 127px;
+}
+
+/* PPC */
+
+.ppc_background {
+    background-color: #FFFFFF;
+    min-height: 604px;
+}
+
+.ppc_logo {
+    float: left;
+    width: 115px;
+    height: 115px;
+    margin-right: 48px;
+}
+
+.ppc_container {
+    /*padding-top: 16px;*/
+    padding-bottom: 60px;
+}
+
+.ppc_text {
+    color: black;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 400;
+}
+
+/* Team */
+
+.team_background {
+    background-color: #EEEEEE;
+    min-height: 845px;  
+}
+
+.team_container {
+    margin-top: 32px;
+    margin-bottom: 64px;
+    display: flex;
+    /*flex-direction: row;*/
+    flex-wrap: wrap;
+    /*justify-content: space-evenly;*/
+    /*align-items: center;*/
+    /*align-content: center;*/
+}
+
+.team_foto {
+    width: 168px;
+    height: 168px;
+}
+
+.team_name {
+    color: #007765;
+    font-size: 24px;
+    line-height: 28px;
+    font-style: normal;
+    font-weight: 700;
+    margin-top: 12px;
+    margin-bottom: 0px;
+}
+
+.team_title {
+    color: #000000;
+    font-size: 18px;
+    line-height: 21px;
+    font-style: italic;
+    font-weight: 400;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.staff {
+    flex-basis: 33.3333%;
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 28px;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 800px) { /* При уменьшении экрана до 767 пикселей (и меньше), карточка будет занимать 50% доступного экрана, чтобы они нормально переносились */
+	.staff {
+		flex-basis: 50%;
+	}
+    .team_container {
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 530px) { /* При уменьшении экрана до 425 пикселей (и меньше), карточка будет занимать 100% доступного экрана, чтобы они нормально переносились */
+	.staff {
+		flex-basis: 100%;
+    }
+}
+
+/* Footer */
+
+.footer_background {
+    background-color: #333333;
+    min-height: 176px;
+}
+
+.footer_text {
+    color: #EEEEEE;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    padding: 50px 339px 62px 340px;
+    margin: 0px auto;
+}
+
+@media (max-width: 1100px) {
+	.footer_text {
+        font-size: 14px;
+        line-height: 17px;
+        padding: 50px 222px 62px 223px;
+    }
+}
+
+@media (max-width: 750px) {
+	.footer_text {
+        font-size: 14px;
+        line-height: 17px;
+        padding: 50px 111px 62px 112px;
+    }
+    .footer_background {
+        min-height: 140px;
+    }
+}

@@ -1,2 +1,4 @@
 # Stepik-hw2-HTML-CSS-landing
-Stepik homework №2 - Landing
+Домашнее задание №3 с курса HTML & CSS на Stepik.org
+
+Основы верстки на примере макета из Figma.
